@@ -1,4 +1,5 @@
 from behave.api.pending_step import StepNotImplementedError
+from behave import when, then
 
 @when(u'je tente d\'accéder à une page destinée aux étudiants')
 def step_impl(context):

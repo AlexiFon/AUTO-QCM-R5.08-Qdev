@@ -1,4 +1,4 @@
-from behave import *
+from behave import when, then
 from django.contrib.auth.models import Group
 from app.models import Utilisateur, Question
 from django.test.client import Client

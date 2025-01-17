@@ -11,15 +11,3 @@ Feature: Accès aux pages pour les étudiants et enseignants
     Given je suis connecté en tant qu'enseignant
     When je tente d'accéder à une page destinée aux enseignants
     Then je devrais voir le contenu de la page
-
-
-
-
-
-
-
-
-
-
-
-
