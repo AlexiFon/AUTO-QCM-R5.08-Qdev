@@ -6,7 +6,20 @@ from behave.api.pending_step import StepNotImplementedError
 
 @given(u'je suis connecté en tant qu\'étudiant')
 def step_impl(context):
-    raise StepNotImplementedError(u'STEP: Given je suis connecté en tant qu\'étudiant')
+    eleve,_ = Group.objects.get_or_create(name="Etudiant")
+    user = Utilisateur.objects.create_user(
+        username="eleve",
+        email="eleve@gmail.com",
+        password="eleve"
+    )
+
+    user.groups.add(eleve)
+    user.save()
+
+    context.client = Client()
+    context.client.login(username="prof", password="prof")
+    context.user = user
+
 
 @given(u'je suis connecté en tant qu\'enseignant')
 def step_impl(context):
