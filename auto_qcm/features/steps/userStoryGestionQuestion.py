@@ -3,23 +3,6 @@ from django.contrib.auth.models import Group
 from app.models import Utilisateur, Question
 from django.test.client import Client
 
-@given('je suis connecté en tant qu\'enseignant')
-def step_impl(context):
-    prof_group, _ = Group.objects.get_or_create(name="Enseignant")
-
-    professeur = Utilisateur.objects.create_user(
-        username="prof",
-        email="prof@gmail.com",
-        password="prof"
-    )
-
-    professeur.groups.add(prof_group)
-    professeur.save()
-
-    context.client = Client()
-    context.client.login(username="prof", password="prof")
-    context.user = professeur
-
 @when('j\'accède à l\'espace de gestion des questions')
 def step_impl(context):
     response = context.client.get('/question/list/')
