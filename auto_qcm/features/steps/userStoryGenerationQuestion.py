@@ -1,4 +1,5 @@
 from behave import given, when, then
+from behave.api.pending_step import StepNotImplementedError
 
 @given(u'j\'ai un support de cours (texte ou PDF)')
 def step_impl(context):

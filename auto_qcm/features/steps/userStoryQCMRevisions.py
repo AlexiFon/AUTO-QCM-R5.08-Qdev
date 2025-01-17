@@ -1,4 +1,5 @@
-from behave import given, when, then
+from behave import when, then
+from behave.api.pending_step import StepNotImplementedError
 
 @when(u'je saisis ou envoie des questions pour un QCM')
 def step_impl(context):

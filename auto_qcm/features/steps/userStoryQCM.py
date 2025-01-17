@@ -1,4 +1,5 @@
 from behave import  when, then
+from behave.api.pending_step import StepNotImplementedError
 
 @when(u'je démarre un QCM')
 def step_impl(context):

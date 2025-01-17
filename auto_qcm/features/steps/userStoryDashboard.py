@@ -1,4 +1,5 @@
 from behave import when, then
+from behave.api.pending_step import StepNotImplementedError
 
 @when(u'j\'accède au tableau de bord des résultats')
 def step_impl(context):
