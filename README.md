@@ -92,7 +92,8 @@ Pour cette user story nous n'avons pas réalisé de tests, car cela nous demande
 **Tests :**
 
 - Test que l'enseignant peut créer un QCM en saisissant des questions.
-- Test que l'enseignant peut créer un QCM en important un fichier.
+- Test que l'enseignant peut modifier des qcms.
+- Test que l'enseignant peut supprimer des qcms.
 
 ## Conclusion
 

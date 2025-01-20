@@ -37,3 +37,12 @@ def step_impl(context):
     context.client = Client()
     context.client.login(username="prof", password="prof")
     context.user = professeur
+
+@given(u'j\'ai une question à exporter')
+def step_impl(context):
+    raise StepNotImplementedError(u'STEP: Given j\'ai une question à exporter')
+
+@given(u'j\'ai un QCM à exporter')
+def step_impl(context):
+    raise StepNotImplementedError(u'STEP: Given j\'ai un QCM à exporter')
+
