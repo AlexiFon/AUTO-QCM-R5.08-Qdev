@@ -54,9 +54,9 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 - Test que les statistiques anonymisées sont visibles.
 - Test de l'accès à l'historique des résultats d'un étudiant.
 
-### User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser les QCM à tout moment.
+### User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser
 
-**Feature : Réalisation des QCM**
+**Feature : Répondre à un qcm**
 
 **Tests :**
 
@@ -65,12 +65,7 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 
 ### User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.
 
-**Feature : Génération automatique de questions**
-
-**Tests :**
-
-- Test que des questions pertinentes sont générées pour un document texte.
-- Test que des questions pertinentes sont générées pour un fichier PDF.
+Pour cette user story nous n'avons pas réalisé de tests, car cela nous demanderai de mettre des clés OpenAI, et d'utiliser des tokens pour le tester à chaque fois.
 
 ### User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.
 
@@ -81,7 +76,16 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 - Test que les questions sont sélectionnées automatiquement à partir de la banque de questions.
 - Test que le QCM généré contient un mélange de questions nouvelles et existantes.
 
-### User Story 9 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.
+### User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.
+
+**Feature : Tableau de bord étudiant**
+
+**Tests :**
+
+- ???
+
+
+### User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.
 
 **Feature : Création de QCM de révision**
 

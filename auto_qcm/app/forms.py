@@ -49,6 +49,21 @@ class BaseReponseFormSet(forms.BaseInlineFormSet):
         if not has_correct_answer:
             raise ValidationError("Il doit y avoir au moins une réponse correcte.")
 
+    def save(self, commit=True):
+        instances = super().save(commit=False)
+        
+        # Récupérer le creator de la question parente
+        creator = self.instance.creator
+        
+        for instance in instances:
+            instance.creator = creator
+            if commit:
+                instance.save()
+        
+        if commit:
+            self.save_m2m()
+        
+        return instances
 
 class QcmForm(forms.ModelForm):
     class Meta:
