@@ -8,7 +8,7 @@ class Reponse(models.Model):
     texte = models.CharField(max_length=255)
     is_correct = models.BooleanField(default=False)
     creator = models.ForeignKey(
-        "Utilisateur", on_delete=models.CASCADE, default=1
+        "Utilisateur", on_delete=models.CASCADE
     )  # 1 est l'ID d'un utilisateur par défaut
 
     def __str__(self):

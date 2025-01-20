@@ -17,7 +17,7 @@ def step_impl(context):
     user.save()
 
     context.client = Client()
-    context.client.login(username="prof", password="prof")
+    context.client.login(username="eleve", password="eleve")
     context.user = user
 
 
