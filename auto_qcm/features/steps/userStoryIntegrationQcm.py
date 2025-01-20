@@ -18,7 +18,6 @@ def step_impl(context):
 def step_impl(context):
     raise StepNotImplementedError(u'STEP: When j\'exporte le qcm au format moodle xml')
 
-
 @then(u'j\'ai un qcm prêt à être importé dans Moodle')
 def step_impl(context):
     raise StepNotImplementedError(u'STEP: Then j\'ai un qcm prêt à être importé dans Moodle')

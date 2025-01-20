@@ -1,7 +1,9 @@
-from behave import given,when,then
-from app.models import Utilisateur
+from behave import given
+from app.models import Utilisateur, Question, QCM, Reponse, Plage
+from datetime import timedelta
 from django.contrib.auth.models import Group
 from django.test import Client
+from django.utils import timezone
 from behave.api.pending_step import StepNotImplementedError
 
 @given(u'je suis connecté en tant qu\'étudiant')
@@ -40,9 +42,59 @@ def step_impl(context):
 
 @given(u'j\'ai une question à exporter')
 def step_impl(context):
-    raise StepNotImplementedError(u'STEP: Given j\'ai une question à exporter')
+    quest =  Question.objects.create(
+        nom="Question à exporter",
+        texte="Texte",
+        note=1,
+        melange_rep=False,
+        creator=context.user
+    )
+
+    Reponse.objects.create(
+        question=quest,
+        texte="Réponse",
+        is_correct=True,
+        creator=context.user
+    )
+
+    context.question = quest
 
 @given(u'j\'ai un QCM à exporter')
 def step_impl(context):
-    raise StepNotImplementedError(u'STEP: Given j\'ai un QCM à exporter')
+    quest =  Question.objects.create(
+        nom="Question1",
+        texte="Texte",
+        note=1,
+        melange_rep=False,
+        creator=context.user
+    )
+
+    Reponse.objects.create(
+        question=quest,
+        texte="Réponse",
+        is_correct=True,
+        creator=context.user
+    )
+
+    qcm = QCM.objects.create(
+        titre="Qcm",
+        description="Texte",
+        date_modif=timezone.now(),
+        creator=context.user
+    )
+
+    promo1,_ = Group.objects.get_or_create(name="BUT1")
+
+    g1a,_ = Group.objects.get_or_create(name="1A")
+    plage = Plage.objects.create(
+        debut=timezone.now(),
+        fin=timezone.now()+timedelta(days=2),
+        promo=promo1,
+        groupe=g1a,
+        qcm=qcm,
+    )
+
+    qcm.questions.add(quest)
+
+    
 
