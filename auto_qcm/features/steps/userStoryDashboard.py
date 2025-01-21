@@ -1,15 +1,20 @@
 from behave import when, then
-from behave.api.pending_step import StepNotImplementedError
+from django.urls import reverse_lazy
 
-@when(u'j\'accède au tableau de bord des résultats')
+@when(u'j\'accède au tableau de bord')
 def step_impl(context):
-    raise StepNotImplementedError(u'STEP: When j\'accède au tableau de bord des résultats')
+    print(context.user.username)
+    response = context.client.get(reverse_lazy('enseignant-dashboard', kwargs={'pk': context.user.pk}))  
+    assert response.status_code == 200, "Impossible d'accéder au tableau de bord."
+    context.response = response
 
 
 @then(u'je vois les statistiques anonymisées ou personnalisées')
 def step_impl(context):
-    raise StepNotImplementedError(u'STEP: Then je vois les statistiques anonymisées ou personnalisées')
+    content = context.response.content.decode('utf-8')
+    assert 'Voir les statistiques des QCM' in content, "Les statistiques ne sont pas affichées sur la page."
 
 @then(u'je vois l\'historique des résultats des étudiants')
 def step_impl(context):
-    raise StepNotImplementedError(u'STEP: Then je vois l\'historique des résultats des étudiants')
+    content = context.response.content.decode('utf-8')
+    assert 'QCM avec vos questions' in content, "L'historique des résultats des étudiants n'est pas visible."
