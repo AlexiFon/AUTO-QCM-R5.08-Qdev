@@ -1,0 +1,8 @@
+PaperSize: A4
+Lang: FR
+CompleteMulti: 0
+ShuffleQuestions: 0
+LaTeX: 1
+**Texte :
++Réponse
+

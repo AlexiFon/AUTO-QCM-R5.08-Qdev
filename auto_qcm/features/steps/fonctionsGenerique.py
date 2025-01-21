@@ -5,6 +5,8 @@ from django.contrib.auth.models import Group
 from django.test import Client
 from django.utils import timezone
 from behave.api.pending_step import StepNotImplementedError
+import os
+from django.conf import settings
 
 @given(u'je suis connecté en tant qu\'étudiant')
 def step_impl(context):
@@ -58,6 +60,7 @@ def step_impl(context):
     )
 
     context.question = quest
+    context.dirFiles = os.path.join(settings.BASE_DIR, '..', 'features', 'steps', 'fichiersIntegration')
 
 @given(u'j\'ai un QCM à exporter')
 def step_impl(context):
@@ -84,9 +87,9 @@ def step_impl(context):
     )
 
     promo1,_ = Group.objects.get_or_create(name="BUT1")
-
     g1a,_ = Group.objects.get_or_create(name="1A")
-    plage = Plage.objects.create(
+
+    Plage.objects.create(
         debut=timezone.now(),
         fin=timezone.now()+timedelta(days=2),
         promo=promo1,
@@ -95,6 +98,9 @@ def step_impl(context):
     )
 
     qcm.questions.add(quest)
+
+    context.qcm = qcm
+    context.dirFiles = os.path.join(settings.BASE_DIR, '..', 'features', 'steps', 'fichiersIntegration')
 
     
 

@@ -1,0 +1,74 @@
+\documentclass{article}
+
+    \usepackage[latin1]{inputenc}
+    \usepackage[T1]{fontenc}
+
+    \usepackage[bloc,completemulti]{automultiplechoice}
+    \usepackage{multicol}
+    \begin{document}
+
+    \AMCrandomseed{1237893}
+
+    \element{amc}{
+      \begin{question}{Question1}
+    \bareme{b=1}
+    Texte
+    \begin{multicols}{2}
+      \begin{reponses}
+        \bonne{Réponse}
+      \end{reponses}
+    \end{multicols}
+  \end{question}
+}
+
+    \exemplaire{10}{
+
+    %%% début de l'en-tête des copies :
+
+    \noindent{\bf Classe d'application d'AMC  \hfill Examen du 01/01/2010}
+
+    \vspace{2ex}
+
+    Cet examen a été réalisé avec l'application AUTO-QCM
+
+    \vspace{3ex}
+
+    \noindent\AMCcode{etu}{8}\hspace*{\fill}
+    \begin{minipage}{.5\linewidth}
+    $\longleftarrow{}$ codez votre numéro d'étudiant ci-contre, et écrivez votre nom et prénom ci-dessous.
+
+    \vspace{3ex}
+
+    \champnom{\fbox{
+        \begin{minipage}{.9\linewidth}
+        Nom et prénom :
+
+        \vspace*{.5cm}\dotfill
+        \vspace*{1mm}
+        \end{minipage}
+    }}\end{minipage}
+
+    \vspace{1ex}
+
+    \noindent\hrulefill
+
+    \vspace{2ex}
+
+    \begin{center}
+    Les questions faisant apparaître le symbole \multiSymbole{} peuvent présenter zéro, une ou plusieurs bonnes réponses. Les autres ont une unique bonne réponse.
+    \end{center}
+
+    \noindent\hrulefill
+
+    \vspace{2ex}
+    %%% fin de l'en-tête
+
+    \melangegroupe{amc}
+    \restituegroupe{amc}
+
+    \clearpage
+
+    }
+
+    \end{document}
+    
