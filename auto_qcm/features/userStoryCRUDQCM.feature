@@ -1,4 +1,5 @@
-Feature: Agrégation automatique de questions pour générer des QCM
+Feature: CRUD QCM
+  En tant qu'enseignant, je souhaite créer, modifier, supprimer et consulter des QCM.
 
 ## En tant qu'enseignant, je souhaite créer des QCM à partir de une ou plusieurs questions.
   Scenario: Génération automatique de QCM
