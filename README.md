@@ -1,27 +1,36 @@
 # Compte-rendu projet de Qualité de développement
 
-*Auteur :* **Alexi Fontanilles, Nathan Pagnucco**
+*Auteurs :* **Alexi Fontanilles, Nathan Pagnucco**
 
 ##  1. <a name='Sommaire'></a>Sommaire
 
-- [1. Sommaire](#1-sommaire)
-- [2. Introduction](#2-introduction)
-- [3. Traçabilité US -\> Features -\> Tests](#3-traçabilité-us---features---tests)
-  - [3.1. User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.](#31-user-story-1--en-tant-quétudiant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
-  - [3.2. User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.](#32-user-story-2--en-tant-quenseignant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
-  - [3.3. User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.](#33-user-story-3--en-tant-quenseignant-je-souhaite-établir-un-lien-efficace-entre-le-système-de-qcm-et-moodleamc)
-  - [3.4. User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.](#34-user-story-4--en-tant-quenseignant-je-veux-pouvoir-accéder-à-un-espace-de-gestion-des-questions)
-  - [3.5. User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord avec les résultats des étudiants.](#35-user-story-5--en-tant-quenseignant-je-veux-consulter-un-tableau-de-bord-avec-les-résultats-des-étudiants)
-  - [3.6. User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser](#36-user-story-6--en-tant-quétudiant-je-veux-pouvoir-réaliser-des-qcm-à-tout-moment-pour-réviser)
-  - [3.7. User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.](#37-user-story-7--en-tant-quenseignant-je-souhaite-envoyer-mes-supports-de-cours-pour-générer-des-questions-automatiquement)
-  - [3.8. User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.](#38-user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
-  - [3.9. User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.](#39-user-story-9--en-tant-quétudiant-je-veux-pouvoir-accéder-à-un-tableau-de-bord-interactif-me-montrant-mes-progrès)
-  - [3.10. User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.](#310-user-story-10--en-tant-quenseignant-je-souhaite-pouvoir-créer-des-qcm-de-révision-hebdomadaire)
-- [4. Conclusion](#4-conclusion)
+- [Compte-rendu projet de Qualité de développement](#compte-rendu-projet-de-qualité-de-développement)
+  - [1. Sommaire](#1-sommaire)
+  - [2. Introduction](#2-introduction)
+  - [Installation](#installation)
+  - [3. Traçabilité US -\> Features -\> Tests](#3-traçabilité-us---features---tests)
+    - [3.1. User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.](#31-user-story-1--en-tant-quétudiant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
+    - [3.2. User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.](#32-user-story-2--en-tant-quenseignant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
+    - [3.3. User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.](#33-user-story-3--en-tant-quenseignant-je-souhaite-établir-un-lien-efficace-entre-le-système-de-qcm-et-moodleamc)
+    - [3.4. User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.](#34-user-story-4--en-tant-quenseignant-je-veux-pouvoir-accéder-à-un-espace-de-gestion-des-questions)
+    - [3.5. User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord avec les résultats des étudiants.](#35-user-story-5--en-tant-quenseignant-je-veux-consulter-un-tableau-de-bord-avec-les-résultats-des-étudiants)
+    - [3.6. User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser](#36-user-story-6--en-tant-quétudiant-je-veux-pouvoir-réaliser-des-qcm-à-tout-moment-pour-réviser)
+    - [3.7. User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.](#37-user-story-7--en-tant-quenseignant-je-souhaite-envoyer-mes-supports-de-cours-pour-générer-des-questions-automatiquement)
+    - [3.8. User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.](#38-user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
+    - [3.9. User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.](#39-user-story-9--en-tant-quétudiant-je-veux-pouvoir-accéder-à-un-tableau-de-bord-interactif-me-montrant-mes-progrès)
+    - [3.10. User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.](#310-user-story-10--en-tant-quenseignant-je-souhaite-pouvoir-créer-des-qcm-de-révision-hebdomadaire)
+  - [4. Conclusion](#4-conclusion)
 
 ##  2. <a name='Introduction'></a>Introduction
 
+Lien vers notre dépôt : [Depot Github](https://github.com/AlexiFon/AUTO-QCM-R5.08-Qdev)
+
 Ce document présente le compte-rendu du projet de Qualité de développement. Il s'agit d'un projet de développement d'une application de QCM en ligne, réalisé en binôme. Le projet est découpé en plusieurs User Stories, chacune représentant une fonctionnalité de l'application. Chaque User Story est associée à une ou plusieurs Features, qui décrivent plus en détail les exigences fonctionnelles. Enfin, chaque Feature est associée à des tests d'acceptation qui permettent de valider son bon fonctionnement.
+
+## Installation
+
+Pour pouvoir commencer à relier des features Cucumber à des tests en python nous avons d'abord choisi de voir si on pouvez utiliser Behave comme nous l'avions fait dans le TP3 mais le packet behave n'était pas du tout prévu pour être utilisé avec django, nous avons alors vu des conflits de version et des packages que nous ne pouvions pas utiliser en même temps. Nous avons donc commencé à regarder une version de behave destiné à django et nous avons trouvé [django-behave](https://github.com/django-behave/django-behave) mais nous avons eu le même problème, il était prévu pour une version antérieure de django et n'a pas eu de mise à jour depuis 3 ans. Finalement nous avons trouvé [behave-django](https://github.com/behave/behave-django) le port officiel de behave pour fonctionner avec django, nous avons pu le rajouter à notre requirements.txt dans la version dev.
+
 
 ##  3. <a name='TraabilitUS-Features-Tests'></a>Traçabilité US -> Features -> Tests
 
@@ -90,8 +99,10 @@ Feature: Accès aux pages pour les étudiants et enseignants
 
 **Tests :**
 
-- Test que le QCM est synchronisé avec Moodle avec succès.
-- Test que les erreurs de synchronisation sont signalées correctement.
+Pour les tests nous avons choisi de tester l'export et l'import avec les trois formats compatibles XML pour Moodle, LaTeX pour AMC, et AMC.txt pour AMC également.
+
+- Test que l'export des qcm sous différent formats est conforme
+- Test que l'import de questions depuis différents formats est conforme
 
 [**Fichier de feature :**](auto_qcm/features/userStoryIntegrationQcm.feature)
 
@@ -151,6 +162,8 @@ Feature: Intégration QCM avec Moodle/AMC
 **Feature : Gestion des questions**
 
 **Tests :**
+
+Pour les tests nous avons choisi de faire des tests sur le crud en faisant des requetes pour tester vraiment le même fonctionnement qu'un utilisateur et non pas juste en créant en base de données.
 
 - Test de modification d'une question existante.
 - Test d'ajout d'une nouvelle question.
