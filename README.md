@@ -2,13 +2,30 @@
 
 *Auteur :* **Alexi Fontanilles, Nathan Pagnucco**
 
-## Introduction
+##  1. <a name='Sommaire'></a>Sommaire
+
+- [1. Sommaire](#1-sommaire)
+- [2. Introduction](#2-introduction)
+- [3. Traçabilité US -\> Features -\> Tests](#3-traçabilité-us---features---tests)
+  - [3.1. User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.](#31-user-story-1--en-tant-quétudiant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
+  - [3.2. User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.](#32-user-story-2--en-tant-quenseignant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
+  - [3.3. User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.](#33-user-story-3--en-tant-quenseignant-je-souhaite-établir-un-lien-efficace-entre-le-système-de-qcm-et-moodleamc)
+  - [3.4. User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.](#34-user-story-4--en-tant-quenseignant-je-veux-pouvoir-accéder-à-un-espace-de-gestion-des-questions)
+  - [3.5. User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord avec les résultats des étudiants.](#35-user-story-5--en-tant-quenseignant-je-veux-consulter-un-tableau-de-bord-avec-les-résultats-des-étudiants)
+  - [3.6. User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser](#36-user-story-6--en-tant-quétudiant-je-veux-pouvoir-réaliser-des-qcm-à-tout-moment-pour-réviser)
+  - [3.7. User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.](#37-user-story-7--en-tant-quenseignant-je-souhaite-envoyer-mes-supports-de-cours-pour-générer-des-questions-automatiquement)
+  - [3.8. User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.](#38-user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
+  - [3.9. User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.](#39-user-story-9--en-tant-quétudiant-je-veux-pouvoir-accéder-à-un-tableau-de-bord-interactif-me-montrant-mes-progrès)
+  - [3.10. User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.](#310-user-story-10--en-tant-quenseignant-je-souhaite-pouvoir-créer-des-qcm-de-révision-hebdomadaire)
+- [4. Conclusion](#4-conclusion)
+
+##  2. <a name='Introduction'></a>Introduction
 
 Ce document présente le compte-rendu du projet de Qualité de développement. Il s'agit d'un projet de développement d'une application de QCM en ligne, réalisé en binôme. Le projet est découpé en plusieurs User Stories, chacune représentant une fonctionnalité de l'application. Chaque User Story est associée à une ou plusieurs Features, qui décrivent plus en détail les exigences fonctionnelles. Enfin, chaque Feature est associée à des tests d'acceptation qui permettent de valider son bon fonctionnement.
 
-## Traçabilité US -> Features -> Tests
+##  3. <a name='TraabilitUS-Features-Tests'></a>Traçabilité US -> Features -> Tests
 
-### User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.
+###  3.1. <a name='UserStory1:Entantqutudiantjeveuxavoiraccstouteslespagesquimesontdestines.'></a>User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.
 
 **Feature : Accès aux pages étudiants**
 
@@ -18,7 +35,7 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 - Test que l'étudiant est bloqué lorsqu'il accède à une page non autorisée.
 
 
-**Fichier de feature :**
+[**Fichier de feature :**](auto_qcm/features/userStoryAccesPage.feature)
 
 ```gherkin
 Feature: Accès aux pages pour les étudiants et enseignants
@@ -38,7 +55,7 @@ Feature: Accès aux pages pour les étudiants et enseignants
 
 **Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryAccesPage.py](auto_qcm/features/steps/userStoryAccesPage.py)
 
-### User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.
+###  3.2. <a name='UserStory2:Entantquenseignantjeveuxavoiraccstouteslespagesquimesontdestines.'></a>User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.
 
 **Feature : Accès aux pages enseignants**
 
@@ -47,7 +64,7 @@ Feature: Accès aux pages pour les étudiants et enseignants
 - Test que l'enseignant peut accéder a une page autorisée uniquement aux enseignants.
 - Test que l'enseignant est bloqué s'il tente d'accéder aux pages d'un autre enseignant.
 
-**Fichier de feature :**
+[**Fichier de feature :**](auto_qcm/features/userStoryAccesPage.feature)
 
 ```gherkin
 Feature: Accès aux pages pour les étudiants et enseignants
@@ -67,7 +84,7 @@ Feature: Accès aux pages pour les étudiants et enseignants
 
 **Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryAccesPage.py](auto_qcm/features/steps/userStoryAccesPage.py)
 
-### User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.
+###  3.3. <a name='UserStory3:EntantquenseignantjesouhaitetablirunlienefficaceentrelesystmedeQCMetMoodleAMC.'></a>User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.
 
 **Feature : Intégration QCM avec Moodle/AMC**
 
@@ -129,7 +146,7 @@ Feature: Intégration QCM avec Moodle/AMC
 
 **Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryIntegrationQcm.py](auto_qcm/features/steps/userIntegrationQcm.py)
 
-### User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.
+###  3.4. <a name='UserStory4:Entantquenseignantjeveuxpouvoiraccderunespacedegestiondesquestions.'></a>User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.
 
 **Feature : Gestion des questions**
 
@@ -138,8 +155,25 @@ Feature: Intégration QCM avec Moodle/AMC
 - Test de modification d'une question existante.
 - Test d'ajout d'une nouvelle question.
 - Test de suppression d'une question.
+  
+[**Fichier de feature :**](auto_qcm/features/userStoryGestionQuestion.feature)
 
-### User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord des résultats des étudiants.
+```gherkin
+Feature: Gestion des questions dans un espace dédié
+
+## En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.
+  Scenario: Modification, suppression ou ajout de questions
+    Given je suis connecté en tant qu'enseignant
+    When j'accède à l'espace de gestion des questions
+    Then je peux ajouter une nouvelle question
+    And je peux supprimer une question
+    And je peux modifier une question existante
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryGestionQuestion.py](auto_qcm/features/steps/userStoryGestionQuestion.py)
+
+
+###  3.5. <a name='UserStory5:Entantquenseignantjeveuxconsulteruntableaudebordaveclesrsultatsdestudiants.'></a>User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord avec les résultats des étudiants.
 
 **Feature : Tableau de bord des résultats**
 
@@ -148,7 +182,22 @@ Feature: Intégration QCM avec Moodle/AMC
 - Test que les statistiques anonymisées sont visibles.
 - Test de l'accès à l'historique des résultats d'un étudiant.
 
-### User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser
+[**Fichier de feature :**](auto_qcm/features/userStoryDashboard.feature)
+
+```gherkin
+Feature: Tableau de bord des résultats des étudiants
+
+## En tant qu'enseignant, je veux consulter un tableau de bord des résultats des étudiants.
+  Scenario: Consultation des statistiques des résultats
+    Given je suis connecté en tant qu'enseignant
+    When j'accède au tableau de bord
+    Then je vois les statistiques anonymisées ou personnalisées
+    And je vois l'historique des résultats des étudiants
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryDashboard.py](auto_qcm/features/steps/userStoryDashboard.py)
+
+###  3.6. <a name='UserStory6:Entantqutudiantjeveuxpouvoirraliserdesqcmtoutmomentpourrviser'></a>User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser
 
 **Feature : Répondre à un qcm**
 
@@ -157,11 +206,26 @@ Feature: Intégration QCM avec Moodle/AMC
 - Test que l'étudiant peut démarrer un QCM et y répondre.
 - Test que les réponses sont enregistrées correctement.
 
-### User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.
+[**Fichier de feature :**](auto_qcm/features/userStoryFaireQCM.feature)
+
+```gherkin
+Feature: Tableau de bord des résultats des étudiants
+
+## En tant qu'enseignant, je veux consulter un tableau de bord des résultats des étudiants.
+  Scenario: Consultation des statistiques des résultats
+    Given je suis connecté en tant qu'enseignant
+    When j'accède au tableau de bord
+    Then je vois les statistiques anonymisées ou personnalisées
+    And je vois l'historique des résultats des étudiants
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryFaireQCM.py](auto_qcm/features/steps/userStoryFaireQCM.py)
+
+###  3.7. <a name='UserStory7:Entantquenseignantjesouhaiteenvoyermessupportsdecourspourgnrerdesquestionsautomatiquement.'></a>User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.
 
 Pour cette user story nous n'avons pas réalisé de tests, car cela nous demanderai de mettre des clés OpenAI, et d'utiliser des tokens pour le tester à chaque fois.
 
-### User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.
+###  3.8. <a name='UserStory8:EntantquenseignantjesouhaiteagrgerautomatiquementdesquestionspourgnrerdesQCMdecontrle.'></a>User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.
 
 **Feature : Agrégation de questions**
 
@@ -170,25 +234,60 @@ Pour cette user story nous n'avons pas réalisé de tests, car cela nous demande
 - Test que les questions sont sélectionnées automatiquement à partir de la banque de questions.
 - Test que le QCM généré contient un mélange de questions nouvelles et existantes.
 
-### User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.
+On a changé l'user story.
+
+[**Fichier de feature :**](auto_qcm/features/userStoryCRUDQCM.feature)
+
+```gherkin
+Feature: CRUD QCM
+  En tant qu'enseignant, je souhaite créer, modifier, supprimer et consulter des QCM.
+
+## En tant qu'enseignant, je souhaite créer des QCM à partir de une ou plusieurs questions.
+  Scenario: Création de QCM
+    Given je suis connecté en tant qu'enseignant
+    When je crée un nouveau QCM
+    Then le QCM est crée
+## En tant qu'enseignant, je souhaite modifier un QCM.
+  Scenario: Modification de QCM
+    Given je suis connecté en tant qu'enseignant 
+    And j'ai créé un QCM
+    When je modifie un QCM
+    Then le QCM est mis à jour
+
+## En tant qu'enseignant, je souhaite supprimer un QCM.
+  Scenario: Suppression de QCM
+    Given je suis connecté en tant qu'enseignant
+    And j'ai créé un QCM
+    When je supprime un QCM
+    Then le QCM est supprimé
+
+## En tant qu'enseignant, je souhaite consulter un QCM.
+  Scenario: Consultation de QCM
+    Given je suis connecté en tant qu'enseignant
+    And j'ai créé un QCM
+    When je consulte un QCM
+    Then le QCM est affiché
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryCRUDQCM.py](auto_qcm/features/steps/userStoryCRUDQCM.py)
+
+###  3.9. <a name='UserStory9:Entantqutudiantjeveuxpouvoiraccderuntableaudebordinteractifmemontrantmesprogrs.'></a>User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.
 
 **Feature : Tableau de bord étudiant**
 
 **Tests :**
 
-- ???
+On ne l'a pas réaliser car nous avons déjà testé l'accès a ce dashboard et nous ne trouvions pas nécessaire ni pertinent l'ajout de ces tests.
 
-
-### User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.
+###  3.10. <a name='UserStory10:EntantquenseignantjesouhaitepouvoircrerdesQCMdervisionhebdomadaire.'></a>User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.
 
 **Feature : Création de QCM de révision**
 
 **Tests :**
 
-- Test que l'enseignant peut créer un QCM en saisissant des questions.
-- Test que l'enseignant peut modifier des qcms.
-- Test que l'enseignant peut supprimer des qcms.
+On a fusionner cette user story avec l'user story 8 pour une meilleur clarté dans les tests. [Lien vers User Story 8](#user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
 
-## Conclusion
+
+##  4. <a name='Conclusion'></a>Conclusion
 
 Chaque User Story est tracée vers une ou plusieurs Features, et chaque Feature est associée à des tests d'acceptation concrets. Cela garantit une couverture complète des exigences fonctionnelles et facilite la validation du projet.
