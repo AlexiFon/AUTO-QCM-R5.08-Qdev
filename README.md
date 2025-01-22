@@ -4,22 +4,21 @@
 
 ##  1. <a name='Sommaire'></a>Sommaire
 
-- [Compte-rendu projet de Qualité de développement](#compte-rendu-projet-de-qualité-de-développement)
-  - [1. Sommaire](#1-sommaire)
-  - [2. Introduction](#2-introduction)
-  - [Installation](#installation)
-  - [3. Traçabilité US -\> Features -\> Tests](#3-traçabilité-us---features---tests)
-    - [3.1. User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.](#31-user-story-1--en-tant-quétudiant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
-    - [3.2. User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.](#32-user-story-2--en-tant-quenseignant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
-    - [3.3. User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.](#33-user-story-3--en-tant-quenseignant-je-souhaite-établir-un-lien-efficace-entre-le-système-de-qcm-et-moodleamc)
-    - [3.4. User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.](#34-user-story-4--en-tant-quenseignant-je-veux-pouvoir-accéder-à-un-espace-de-gestion-des-questions)
-    - [3.5. User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord avec les résultats des étudiants.](#35-user-story-5--en-tant-quenseignant-je-veux-consulter-un-tableau-de-bord-avec-les-résultats-des-étudiants)
-    - [3.6. User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser](#36-user-story-6--en-tant-quétudiant-je-veux-pouvoir-réaliser-des-qcm-à-tout-moment-pour-réviser)
-    - [3.7. User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.](#37-user-story-7--en-tant-quenseignant-je-souhaite-envoyer-mes-supports-de-cours-pour-générer-des-questions-automatiquement)
-    - [3.8. User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.](#38-user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
-    - [3.9. User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.](#39-user-story-9--en-tant-quétudiant-je-veux-pouvoir-accéder-à-un-tableau-de-bord-interactif-me-montrant-mes-progrès)
-    - [3.10. User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.](#310-user-story-10--en-tant-quenseignant-je-souhaite-pouvoir-créer-des-qcm-de-révision-hebdomadaire)
-  - [4. Conclusion](#4-conclusion)
+- [1. Sommaire](#1-sommaire)
+- [2. Introduction](#2-introduction)
+- [Installation](#installation)
+- [3. Traçabilité US -\> Features -\> Tests](#3-traçabilité-us---features---tests)
+  - [3.1. User Story 1 : En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.](#31-user-story-1--en-tant-quétudiant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
+  - [3.2. User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.](#32-user-story-2--en-tant-quenseignant-je-veux-avoir-accès-à-toutes-les-pages-qui-me-sont-destinées)
+  - [3.3. User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.](#33-user-story-3--en-tant-quenseignant-je-souhaite-établir-un-lien-efficace-entre-le-système-de-qcm-et-moodleamc)
+  - [3.4. User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.](#34-user-story-4--en-tant-quenseignant-je-veux-pouvoir-accéder-à-un-espace-de-gestion-des-questions)
+  - [3.5. User Story 5 : En tant qu'enseignant, je veux consulter un tableau de bord avec les résultats des étudiants.](#35-user-story-5--en-tant-quenseignant-je-veux-consulter-un-tableau-de-bord-avec-les-résultats-des-étudiants)
+  - [3.6. User Story 6 : En tant qu'étudiant, je veux pouvoir réaliser des qcm à tout moment pour réviser](#36-user-story-6--en-tant-quétudiant-je-veux-pouvoir-réaliser-des-qcm-à-tout-moment-pour-réviser)
+  - [3.7. User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.](#37-user-story-7--en-tant-quenseignant-je-souhaite-envoyer-mes-supports-de-cours-pour-générer-des-questions-automatiquement)
+  - [3.8. User Story 8 : En tant qu'enseignant, je souhaite agréger automatiquement des questions pour générer des QCM de contrôle.](#38-user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
+  - [3.9. User Story 9 : En tant qu'étudiant, je veux pouvoir accéder à un tableau de bord interactif me montrant mes progrès.](#39-user-story-9--en-tant-quétudiant-je-veux-pouvoir-accéder-à-un-tableau-de-bord-interactif-me-montrant-mes-progrès)
+  - [3.10. User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.](#310-user-story-10--en-tant-quenseignant-je-souhaite-pouvoir-créer-des-qcm-de-révision-hebdomadaire)
+- [4. Conclusion](#4-conclusion)
 
 ##  2. <a name='Introduction'></a>Introduction
 
