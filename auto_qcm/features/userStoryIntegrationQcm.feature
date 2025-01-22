@@ -31,17 +31,17 @@ Feature: Intégration QCM avec Moodle/AMC
     Given je suis connecté en tant qu'enseignant
     And j'ai des questions Moodle XML à importer
     When j'importe les questions au format moodle xml
-    Then j'ai des questions prêtes à être utilisées dans un QCM
+    Then j'ai des questions importées de Moodle XML en base de données
   
   Scenario: Import de questions vers AMC
     Given je suis connecté en tant qu'enseignant
     And j'ai des questions AMC à importer
     When j'importe les questions au format amc
-    Then j'ai des questions prêtes à être utilisées dans un QCM
+    Then j'ai des questions importées de AMC en base de données
   
   Scenario: Import de questions vers AMC.txt
     Given je suis connecté en tant qu'enseignant
     And j'ai des questions AMC.txt à importer
     When j'importe les questions au format amc.txt
-    Then j'ai des questions prêtes à être utilisées dans un QCM
+    Then j'ai des questions importées de AMC Txt en base de données
     
