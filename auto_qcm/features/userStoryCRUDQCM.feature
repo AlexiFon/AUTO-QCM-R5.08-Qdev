@@ -2,7 +2,7 @@ Feature: CRUD QCM
   En tant qu'enseignant, je souhaite créer, modifier, supprimer et consulter des QCM.
 
 ## En tant qu'enseignant, je souhaite créer des QCM à partir de une ou plusieurs questions.
-  Scenario: Génération automatique de QCM
+  Scenario: Création de QCM
     Given je suis connecté en tant qu'enseignant
     When je crée un nouveau QCM
     Then le QCM est crée
