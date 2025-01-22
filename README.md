@@ -17,14 +17,55 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 - Test que l'étudiant peut accéder à une page autorisée.
 - Test que l'étudiant est bloqué lorsqu'il accède à une page non autorisée.
 
+
+**Fichier de feature :**
+
+```gherkin
+Feature: Accès aux pages pour les étudiants et enseignants
+
+## En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.
+  Scenario: Accès à une page pour les étudiants
+    Given je suis connecté en tant qu'étudiant
+    When je tente d'accéder à une page destinée aux étudiants
+    Then je devrais voir le contenu de la page
+
+## En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.
+  Scenario: Accès à une page pour les enseignants
+    Given je suis connecté en tant qu'enseignant
+    When je tente d'accéder à une page destinée aux enseignants
+    Then je devrais voir le contenu de la page
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryAccesPage.py](auto_qcm/features/steps/userStoryAccesPage.py)
+
 ### User Story 2 : En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.
 
 **Feature : Accès aux pages enseignants**
 
 **Tests :**
 
-- Test que l'enseignant peut accéder aux pages d'administration.
-- Test que l'enseignant est redirigé s'il tente d'accéder aux pages étudiantes.
+- Test que l'enseignant peut accéder a une page autorisée uniquement aux enseignants.
+- Test que l'enseignant est bloqué s'il tente d'accéder aux pages d'un autre enseignant.
+
+**Fichier de feature :**
+
+```gherkin
+Feature: Accès aux pages pour les étudiants et enseignants
+
+## En tant qu'étudiant, je veux avoir accès à toutes les pages qui me sont destinées.
+  Scenario: Accès à une page pour les étudiants
+    Given je suis connecté en tant qu'étudiant
+    When je tente d'accéder à une page destinée aux étudiants
+    Then je devrais voir le contenu de la page
+
+## En tant qu'enseignant, je veux avoir accès à toutes les pages qui me sont destinées.
+  Scenario: Accès à une page pour les enseignants
+    Given je suis connecté en tant qu'enseignant
+    When je tente d'accéder à une page destinée aux enseignants
+    Then je devrais voir le contenu de la page
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryAccesPage.py](auto_qcm/features/steps/userStoryAccesPage.py)
 
 ### User Story 3 : En tant qu'enseignant, je souhaite établir un lien efficace entre le système de QCM et Moodle/AMC.
 
@@ -34,6 +75,59 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 
 - Test que le QCM est synchronisé avec Moodle avec succès.
 - Test que les erreurs de synchronisation sont signalées correctement.
+
+[**Fichier de feature :**](auto_qcm/features/userStoryIntegrationQcm.feature)
+
+```gherkin
+Feature: Intégration QCM avec Moodle/AMC
+
+## En tant qu'enseignant, je souhaite tester l'export des qcm vers Moodle/AMC
+  Scenario: Export de QCM vers Moodle Xml
+    Given je suis connecté en tant qu'enseignant
+    And j'ai un QCM à exporter
+    When j'exporte le qcm au format moodle xml
+    Then j'ai un qcm prêt à être importé dans Moodle
+
+  Scenario: Export de question vers Moodle Xml
+    Given je suis connecté en tant qu'enseignant
+    And j'ai une question à exporter
+    When j'exporte la question au format moodle xml
+    Then j'ai une question prête à être importé dans Moodle
+
+  Scenario: Export de QCM vers AMC
+    Given je suis connecté en tant qu'enseignant
+    And j'ai un QCM à exporter
+    When j'exporte le qcm au format amc
+    Then j'ai un qcm au format AMC
+  
+  Scenario: Export de QCM vers AMC.txt
+    Given je suis connecté en tant qu'enseignant
+    And j'ai un QCM à exporter
+    When j'exporte le qcm au format amc.txt
+    Then j'ai un qcm au format AMC.txt
+
+## En tant qu'enseignant, je souhaite tester l'import des qcm depuis Moodle/AMC
+
+  Scenario: Import de questions vers Moodle Xml
+    Given je suis connecté en tant qu'enseignant
+    And j'ai des questions Moodle XML à importer
+    When j'importe les questions au format moodle xml
+    Then j'ai des questions importées de Moodle XML en base de données
+  
+  Scenario: Import de questions vers AMC
+    Given je suis connecté en tant qu'enseignant
+    And j'ai des questions AMC à importer
+    When j'importe les questions au format amc
+    Then j'ai des questions importées de AMC en base de données
+  
+  Scenario: Import de questions vers AMC.txt
+    Given je suis connecté en tant qu'enseignant
+    And j'ai des questions AMC.txt à importer
+    When j'importe les questions au format amc.txt
+    Then j'ai des questions importées de AMC Txt en base de données
+```
+
+**Lien vers le fichier de tests :** [auto_qcm/features/steps/userStoryIntegrationQcm.py](auto_qcm/features/steps/userIntegrationQcm.py)
 
 ### User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.
 
@@ -60,7 +154,7 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 
 **Tests :**
 
-- Test que l'étudiant peut démarrer un QCM.
+- Test que l'étudiant peut démarrer un QCM et y répondre.
 - Test que les réponses sont enregistrées correctement.
 
 ### User Story 7 : En tant qu'enseignant, je souhaite envoyer mes supports de cours pour générer des questions automatiquement.
