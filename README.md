@@ -1,10 +1,17 @@
 # Compte-rendu projet de Qualité de développement
 
-*Auteur :* **Alexi Fontanilles, Nathan Pagnucco**
+*Auteurs :* **Alexi Fontanilles, Nathan Pagnucco**
 
 ## Introduction
 
+Lien vers notre dépôt : [Depot Github](https://github.com/AlexiFon/AUTO-QCM-R5.08-Qdev)
+
 Ce document présente le compte-rendu du projet de Qualité de développement. Il s'agit d'un projet de développement d'une application de QCM en ligne, réalisé en binôme. Le projet est découpé en plusieurs User Stories, chacune représentant une fonctionnalité de l'application. Chaque User Story est associée à une ou plusieurs Features, qui décrivent plus en détail les exigences fonctionnelles. Enfin, chaque Feature est associée à des tests d'acceptation qui permettent de valider son bon fonctionnement.
+
+## Installation
+
+Pour pouvoir commencer à relier des features Cucumber à des tests en python nous avons d'abord choisi de voir si on pouvez utiliser Behave comme nous l'avions fait dans le TP3 mais le packet behave n'était pas du tout prévu pour être utilisé avec django, nous avons alors vu des conflits de version et des packages que nous ne pouvions pas utiliser en même temps. Nous avons donc commencé à regarder une version de behave destiné à django et nous avons trouvé [django-behave](https://github.com/django-behave/django-behave) mais nous avons eu le même problème, il était prévu pour une version antérieure de django et n'a pas eu de mise à jour depuis 3 ans. Finalement nous avons trouvé [behave-django](https://github.com/behave/behave-django) le port officiel de behave pour fonctionner avec django, nous avons pu le rajouter à notre requirements.txt dans la version dev.
+
 
 ## Traçabilité US -> Features -> Tests
 
@@ -32,14 +39,18 @@ Ce document présente le compte-rendu du projet de Qualité de développement. I
 
 **Tests :**
 
-- Test que le QCM est synchronisé avec Moodle avec succès.
-- Test que les erreurs de synchronisation sont signalées correctement.
+Pour les tests nous avons choisi de tester l'export et l'import avec les trois formats compatibles XML pour Moodle, LaTeX pour AMC, et AMC.txt pour AMC également.
+
+- Test que l'export des qcm sous différent formats est conforme
+- Test que l'import de questions depuis différents formats est conforme
 
 ### User Story 4 : En tant qu'enseignant, je veux pouvoir accéder à un espace de gestion des questions.
 
 **Feature : Gestion des questions**
 
 **Tests :**
+
+Pour les tests nous avons choisi de faire des tests sur le crud en faisant des requetes pour tester vraiment le même fonctionnement qu'un utilisateur et non pas juste en créant en base de données.
 
 - Test de modification d'une question existante.
 - Test d'ajout d'une nouvelle question.
