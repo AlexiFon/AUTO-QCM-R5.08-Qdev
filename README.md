@@ -289,7 +289,7 @@ Feature: CRUD QCM
 
 **Tests :**
 
-On ne l'a pas réaliser car nous avons déjà testé l'accès a ce dashboard et nous ne trouvions pas nécessaire ni pertinent l'ajout de ces tests.
+On ne l'a pas réalisé car nous avons déjà testé l'accès a ce dashboard et nous ne trouvions pas nécessaire ni pertinent l'ajout de ces tests.
 
 ###  3.10. <a name='UserStory10:EntantquenseignantjesouhaitepouvoircrerdesQCMdervisionhebdomadaire.'></a>User Story 10 : En tant qu'enseignant, je souhaite pouvoir créer des QCM de révision hebdomadaire.
 
@@ -297,7 +297,7 @@ On ne l'a pas réaliser car nous avons déjà testé l'accès a ce dashboard et 
 
 **Tests :**
 
-On a fusionner cette user story avec l'user story 8 pour une meilleur clarté dans les tests. [Lien vers User Story 8](#user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
+On a fusionné cette user story avec l'user story 8 pour une meilleur clarté dans les tests, les user story que nous avions crééé pendant la SAE étaient redondantes. [Lien vers User Story 8](#user-story-8--en-tant-quenseignant-je-souhaite-agréger-automatiquement-des-questions-pour-générer-des-qcm-de-contrôle)
 
 
 ##  4. <a name='Conclusion'></a>Conclusion
